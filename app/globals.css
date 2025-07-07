@@ -61,4 +61,16 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+  .text-primary {
+    color: var(--color-primary-from) !important;
+  }
+  .bg-primary {
+    background-color: var(--color-primary-from) !important;
+  }
+  .border-primary {
+    border-color: var(--color-primary-from) !important;
+  }
+  .bg-gradient-primary {
+    background-image: linear-gradient(to right, var(--color-primary-from), var(--color-primary-to)) !important;
+  }
 } 

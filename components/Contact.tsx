@@ -110,8 +110,8 @@ const Contact = () => {
                   className="card hover:shadow-lg transition-all duration-300 group"
                 >
                   <div className="flex items-center gap-4">
-                    <div className="p-3 bg-primary-100 dark:bg-primary-900/20 rounded-lg group-hover:bg-primary-200 dark:group-hover:bg-primary-900/40 transition-colors duration-200">
-                      <info.icon size={24} className="text-primary-600 dark:text-primary-400" />
+                    <div className="p-3 bg-primary rounded-lg group-hover:bg-primary transition-colors duration-200">
+                      <info.icon size={24} className="text-primary" />
                     </div>
                     <div>
                       <h4 className="font-semibold text-dark-900 dark:text-white">

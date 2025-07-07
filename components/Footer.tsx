@@ -39,7 +39,7 @@ const Footer = () => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-primary-400 transition-colors duration-200"
+                  className="text-gray-400 hover:text-primary transition-colors duration-200"
                 >
                   {social.name}
                 </a>
@@ -69,7 +69,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-primary-400 transition-colors duration-200"
+                    className="text-gray-400 hover:text-primary transition-colors duration-200"
                   >
                     {link.name}
                   </a>
@@ -111,7 +111,7 @@ const Footer = () => {
           
           <button
             onClick={scrollToTop}
-            className="flex items-center gap-2 text-gray-400 hover:text-primary-400 transition-colors duration-200"
+            className="flex items-center gap-2 text-gray-400 hover:text-primary transition-colors duration-200"
           >
             <span>Back to top</span>
             <ArrowUp size={16} />

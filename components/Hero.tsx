@@ -73,15 +73,15 @@ const Hero = () => {
             className="flex justify-center items-center gap-8 pt-8"
           >
             <div className="text-center">
-              <div className="text-2xl font-bold text-primary-600 dark:text-primary-400">100+</div>
+              <div className="text-2xl font-bold text-primary">100+</div>
               <div className="text-sm text-gray-600 dark:text-gray-400">Projects Delivered</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-primary-600 dark:text-primary-400">5-Star</div>
+              <div className="text-2xl font-bold text-primary">5-Star</div>
               <div className="text-sm text-gray-600 dark:text-gray-400">Client Satisfaction</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-primary-600 dark:text-primary-400">Fast</div>
+              <div className="text-2xl font-bold text-primary">Fast</div>
               <div className="text-sm text-gray-600 dark:text-gray-400">Turnaround</div>
             </div>
           </motion.div>

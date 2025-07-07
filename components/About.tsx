@@ -33,7 +33,7 @@ const About = () => {
           >
             {/* Placeholder Business/Team Image */}
             <div className="relative">
-              <div className="w-80 h-80 mx-auto rounded-full bg-gradient-to-br from-primary-400 to-purple-600 p-1 flex items-center justify-center">
+              <div className="w-80 h-80 mx-auto rounded-full bg-gradient-primary p-1 flex items-center justify-center">
                 <Users size={120} className="text-gray-200 dark:text-dark-700" />
               </div>
             </div>
@@ -45,28 +45,28 @@ const About = () => {
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="flex items-center gap-3">
-                  <Award size={20} className="text-primary-600 dark:text-primary-400" />
+                  <Award size={20} className="text-primary" />
                   <div>
                     <p className="text-sm text-gray-500 dark:text-gray-400">Experienced</p>
                     <p className="font-medium text-dark-900 dark:text-white">Professional Team</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Globe size={20} className="text-primary-600 dark:text-primary-400" />
+                  <Globe size={20} className="text-primary" />
                   <div>
                     <p className="text-sm text-gray-500 dark:text-gray-400">Global Reach</p>
                     <p className="font-medium text-dark-900 dark:text-white">Clients Worldwide</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Briefcase size={20} className="text-primary-600 dark:text-primary-400" />
+                  <Briefcase size={20} className="text-primary" />
                   <div>
                     <p className="text-sm text-gray-500 dark:text-gray-400">Fast Turnaround</p>
                     <p className="font-medium text-dark-900 dark:text-white">Reliable Support</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Award size={20} className="text-primary-600 dark:text-primary-400" />
+                  <Award size={20} className="text-primary" />
                   <div>
                     <p className="text-sm text-gray-500 dark:text-gray-400">5-Star Rated</p>
                     <p className="font-medium text-dark-900 dark:text-white">Client Satisfaction</p>
@@ -99,15 +99,15 @@ const About = () => {
               </h3>
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
-                  <Briefcase size={18} className="text-primary-600 dark:text-primary-400" />
+                  <Briefcase size={18} className="text-primary" />
                   <span className="text-dark-900 dark:text-white font-medium">Serving clients worldwide since 2020</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Globe size={18} className="text-primary-600 dark:text-primary-400" />
+                  <Globe size={18} className="text-primary" />
                   <span className="text-dark-900 dark:text-white font-medium">Remote & Flexible</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Award size={18} className="text-primary-600 dark:text-primary-400" />
+                  <Award size={18} className="text-primary" />
                   <span className="text-dark-900 dark:text-white font-medium">100+ Projects Delivered</span>
                 </div>
               </div>

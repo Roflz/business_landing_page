@@ -56,7 +56,7 @@ const Header = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
+                className="text-gray-700 dark:text-gray-300 hover:text-primary transition-colors duration-200"
               >
                 {item.name}
               </a>
@@ -111,7 +111,7 @@ const Header = () => {
                   key={item.name}
                   href={item.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
+                  className="text-gray-700 dark:text-gray-300 hover:text-primary transition-colors duration-200"
                 >
                   {item.name}
                 </a>

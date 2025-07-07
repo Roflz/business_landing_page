@@ -53,7 +53,7 @@ const Testimonials = () => {
               viewport={{ once: true }}
               className="card flex flex-col items-center text-center"
             >
-              <Quote size={32} className="mb-4 text-primary-600 dark:text-primary-400" />
+              <Quote size={32} className="mb-4 text-primary" />
               <p className="text-gray-700 dark:text-gray-300 italic mb-4">“{testimonial.quote}”</p>
               <div className="font-semibold text-dark-900 dark:text-white">{testimonial.name}</div>
               <div className="text-sm text-gray-500 dark:text-gray-400">{testimonial.role}, {testimonial.company}</div>

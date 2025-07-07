@@ -60,7 +60,7 @@ const Process = () => {
               viewport={{ once: true }}
               className="card flex flex-col items-center text-center"
             >
-              <step.icon size={40} className="mb-4 text-primary-600 dark:text-primary-400" />
+              <step.icon size={40} className="mb-4 text-primary" />
               <h3 className="text-xl font-semibold text-dark-900 dark:text-white mb-2">
                 {step.title}
               </h3>
