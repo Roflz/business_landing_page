@@ -39,10 +39,18 @@ body {
   --theme-text: #171717;
 }
 .theme-dark {
-  --theme-primary: #171717;
-  --theme-secondary: #333;
-  --theme-bg: #0a0a0a;
-  --theme-text: #ededed;
+  /* Main accent color (buttons, links, highlights only) */
+  --theme-primary: #2563eb;
+  /* Card/section background */
+  --theme-secondary: #1e293b;
+  /* Main background */
+  --theme-bg: #0f172a;
+  /* Main text color */
+  --theme-text: #ffffff;
+  /* Muted/secondary text color */
+  --theme-muted: #94a3b8;
+  /* Border color */
+  --theme-border: #334155;
 }
 
 body.theme-blue {

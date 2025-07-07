@@ -18,8 +18,8 @@ const ServicesSection = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl font-bold mb-4" style={{ color: 'var(--theme-primary)' }}>
-              Our <span>[Services]</span>
+            <h2 className="text-4xl font-bold mb-4" style={{ color: 'var(--theme-text)' }}>
+              Our <span style={{ color: 'var(--theme-primary)' }}>[Services]</span>
             </h2>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -30,14 +30,14 @@ const ServicesSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: idx * 0.1 }}
                 viewport={{ once: true }}
-                className="rounded-xl shadow-lg border p-8 flex flex-col items-center hover:scale-105 hover:shadow-2xl transition-transform bg-[color:var(--theme-bg)]"
-                style={{ borderColor: 'var(--theme-primary)', color: 'var(--theme-text)' }}
+                className="rounded-xl shadow-lg border p-8 flex flex-col items-center hover:scale-105 hover:shadow-2xl transition-transform bg-[color:var(--theme-secondary)] dark:bg-[color:var(--theme-secondary)]"
+                style={{ borderColor: 'var(--theme-border)', color: 'var(--theme-text)' }}
               >
                 <span className="text-4xl mb-3" style={{ color: 'var(--theme-primary)' }}>
                   {i === 1 ? '💻' : i === 2 ? '📱' : '🔍'}
                 </span>
-                <h3 className="font-semibold text-xl mb-2" style={{ color: 'var(--theme-primary)' }}>[Service {i}]</h3>
-                <p className="text-center" style={{ color: 'var(--theme-secondary)' }}>[Description of the service offered.]</p>
+                <h3 className="font-semibold text-xl mb-2" style={{ color: 'var(--theme-text)' }}>[Service {i}]</h3>
+                <p className="text-center" style={{ color: 'var(--theme-muted)' }}>[Description of the service offered.]</p>
               </motion.div>
             ))}
           </div>
@@ -50,22 +50,22 @@ const ServicesSection = () => {
   return (
     <section id="services" className="py-16 bg-[color:var(--theme-bg)] animate-fade-in" style={{ color: 'var(--theme-text)' }}>
       <div className="max-w-4xl mx-auto px-4">
-        <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-center" style={{ color: 'var(--theme-primary)' }}>Our Services</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-center" style={{ color: 'var(--theme-text)' }}>Our <span style={{ color: 'var(--theme-primary)' }}>Services</span></h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="p-6 border rounded-2xl shadow-lg hover:scale-105 hover:shadow-2xl transition transform bg-[color:var(--theme-bg)] flex flex-col items-center" style={{ borderColor: 'var(--theme-primary)', color: 'var(--theme-text)' }}>
+          <div className="p-6 border rounded-2xl shadow-lg hover:scale-105 hover:shadow-2xl transition transform bg-[color:var(--theme-secondary)] flex flex-col items-center" style={{ borderColor: 'var(--theme-border)', color: 'var(--theme-text)' }}>
             <span className="text-4xl mb-3" style={{ color: 'var(--theme-primary)' }}>💻</span>
-            <h3 className="font-semibold text-lg sm:text-xl mb-2" style={{ color: 'var(--theme-primary)' }}>[Service One]</h3>
-            <p className="text-center" style={{ color: 'var(--theme-secondary)' }}>[Description of the first service offered.]</p>
+            <h3 className="font-semibold text-lg sm:text-xl mb-2" style={{ color: 'var(--theme-text)' }}>[Service One]</h3>
+            <p className="text-center" style={{ color: 'var(--theme-muted)' }}>[Description of the first service offered.]</p>
           </div>
-          <div className="p-6 border rounded-2xl shadow-lg hover:scale-105 hover:shadow-2xl transition transform bg-[color:var(--theme-bg)] flex flex-col items-center" style={{ borderColor: 'var(--theme-primary)', color: 'var(--theme-text)' }}>
+          <div className="p-6 border rounded-2xl shadow-lg hover:scale-105 hover:shadow-2xl transition transform bg-[color:var(--theme-secondary)] flex flex-col items-center" style={{ borderColor: 'var(--theme-border)', color: 'var(--theme-text)' }}>
             <span className="text-4xl mb-3" style={{ color: 'var(--theme-primary)' }}>📱</span>
-            <h3 className="font-semibold text-lg sm:text-xl mb-2" style={{ color: 'var(--theme-primary)' }}>[Service Two]</h3>
-            <p className="text-center" style={{ color: 'var(--theme-secondary)' }}>[Description of the second service offered.]</p>
+            <h3 className="font-semibold text-lg sm:text-xl mb-2" style={{ color: 'var(--theme-text)' }}>[Service Two]</h3>
+            <p className="text-center" style={{ color: 'var(--theme-muted)' }}>[Description of the second service offered.]</p>
           </div>
-          <div className="p-6 border rounded-2xl shadow-lg hover:scale-105 hover:shadow-2xl transition transform bg-[color:var(--theme-bg)] flex flex-col items-center" style={{ borderColor: 'var(--theme-primary)', color: 'var(--theme-text)' }}>
+          <div className="p-6 border rounded-2xl shadow-lg hover:scale-105 hover:shadow-2xl transition transform bg-[color:var(--theme-secondary)] flex flex-col items-center" style={{ borderColor: 'var(--theme-border)', color: 'var(--theme-text)' }}>
             <span className="text-4xl mb-3" style={{ color: 'var(--theme-primary)' }}>🔍</span>
-            <h3 className="font-semibold text-lg sm:text-xl mb-2" style={{ color: 'var(--theme-primary)' }}>[Service Three]</h3>
-            <p className="text-center" style={{ color: 'var(--theme-secondary)' }}>[Description of the third service offered.]</p>
+            <h3 className="font-semibold text-lg sm:text-xl mb-2" style={{ color: 'var(--theme-text)' }}>[Service Three]</h3>
+            <p className="text-center" style={{ color: 'var(--theme-muted)' }}>[Description of the third service offered.]</p>
           </div>
         </div>
       </div>

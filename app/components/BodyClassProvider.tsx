@@ -10,8 +10,10 @@ export default function BodyClassProvider({ children }: { children: React.ReactN
     document.body.classList.add(theme);
     if (darkMode) {
       document.body.classList.add('theme-dark');
+      document.body.classList.add('dark');
     } else {
       document.body.classList.remove('theme-dark');
+      document.body.classList.remove('dark');
     }
   }, [theme, darkMode]);
 
