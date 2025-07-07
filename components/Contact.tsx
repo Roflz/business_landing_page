@@ -2,13 +2,13 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react'
+import { Mail, Phone, MapPin, Clock, Send, CheckCircle } from 'lucide-react'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    subject: '',
+    service: '',
     message: ''
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -18,8 +18,8 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email',
-      value: 'your.email@example.com',
-      link: 'mailto:your.email@example.com'
+      value: 'business@email.com',
+      link: 'mailto:business@email.com'
     },
     {
       icon: Phone,
@@ -30,12 +30,18 @@ const Contact = () => {
     {
       icon: MapPin,
       title: 'Location',
-      value: 'San Francisco, CA',
+      value: '123 Main St, San Francisco, CA',
+      link: 'https://goo.gl/maps/example'
+    },
+    {
+      icon: Clock,
+      title: 'Business Hours',
+      value: 'Mon-Fri: 9am – 6pm',
       link: '#'
     }
   ]
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
     setFormData(prev => ({
       ...prev,
@@ -46,17 +52,12 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
-    // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 2000))
-    
     setIsSubmitting(false)
     setIsSubmitted(true)
-    
-    // Reset form after 3 seconds
     setTimeout(() => {
       setIsSubmitted(false)
-      setFormData({ name: '', email: '', subject: '', message: '' })
+      setFormData({ name: '', email: '', service: '', message: '' })
     }, 3000)
   }
 
@@ -71,10 +72,10 @@ const Contact = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold text-dark-900 dark:text-white mb-4">
-            Get In <span className="gradient-text">Touch</span>
+            Request a <span className="gradient-text">Free Quote</span>
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Let's discuss your next project or just say hello. I'm always open to new opportunities and collaborations.
+            Ready to start your project or have questions? Fill out the form and we'll get back to you promptly.
           </p>
         </motion.div>
 
@@ -89,11 +90,10 @@ const Contact = () => {
           >
             <div>
               <h3 className="text-2xl font-semibold text-dark-900 dark:text-white mb-6">
-                Let's Connect
+                Let's Work Together
               </h3>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
-                I'm always interested in hearing about new opportunities, interesting projects, 
-                or just want to chat about technology. Feel free to reach out!
+                We're here to help your business grow. Reach out for a free consultation or quote—no obligation!
               </p>
             </div>
 
@@ -126,39 +126,16 @@ const Contact = () => {
               ))}
             </div>
 
-            {/* Social Links */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }}
-              className="card"
-            >
-              <h4 className="text-xl font-semibold text-dark-900 dark:text-white mb-4">
-                Follow Me
-              </h4>
-              <div className="flex gap-4">
-                {[
-                  { name: 'GitHub', url: 'https://github.com/yourusername', color: 'hover:bg-gray-900' },
-                  { name: 'LinkedIn', url: 'https://linkedin.com/in/yourusername', color: 'hover:bg-blue-600' },
-                  { name: 'Twitter', url: 'https://twitter.com/yourusername', color: 'hover:bg-blue-400' },
-                  { name: 'Dribbble', url: 'https://dribbble.com/yourusername', color: 'hover:bg-pink-500' }
-                ].map((social) => (
-                  <a
-                    key={social.name}
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`p-3 bg-gray-100 dark:bg-dark-700 rounded-lg text-gray-700 dark:text-gray-300 transition-all duration-200 ${social.color} hover:text-white`}
-                  >
-                    {social.name}
-                  </a>
-                ))}
+            {/* Map Placeholder */}
+            <div className="card mt-8">
+              <h4 className="text-lg font-semibold text-dark-900 dark:text-white mb-2">Our Location</h4>
+              <div className="w-full h-48 bg-gray-200 dark:bg-dark-700 rounded-lg flex items-center justify-center text-gray-400 dark:text-gray-500">
+                [Google Map Placeholder]
               </div>
-            </motion.div>
+            </div>
           </motion.div>
 
-          {/* Contact Form */}
+          {/* Contact/Quote Request Form */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -167,7 +144,7 @@ const Contact = () => {
           >
             <div className="card">
               <h3 className="text-2xl font-semibold text-dark-900 dark:text-white mb-6">
-                Send Message
+                Get a Free Quote
               </h3>
 
               {isSubmitted ? (
@@ -178,10 +155,10 @@ const Contact = () => {
                 >
                   <CheckCircle size={64} className="text-green-500 mx-auto mb-4" />
                   <h4 className="text-xl font-semibold text-dark-900 dark:text-white mb-2">
-                    Message Sent!
+                    Request Sent!
                   </h4>
                   <p className="text-gray-600 dark:text-gray-400">
-                    Thank you for reaching out. I'll get back to you soon!
+                    Thank you for your interest. We'll get back to you soon!
                   </p>
                 </motion.div>
               ) : (
@@ -214,25 +191,32 @@ const Contact = () => {
                         onChange={handleInputChange}
                         required
                         className="w-full px-4 py-3 border border-gray-300 dark:border-dark-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-dark-700 text-dark-900 dark:text-white"
-                        placeholder="your.email@example.com"
+                        placeholder="your@email.com"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-dark-900 dark:text-white mb-2">
-                      Subject
+                    <label htmlFor="service" className="block text-sm font-medium text-dark-900 dark:text-white mb-2">
+                      Service Needed
                     </label>
-                    <input
-                      type="text"
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
+                    <select
+                      id="service"
+                      name="service"
+                      value={formData.service}
                       onChange={handleInputChange}
                       required
                       className="w-full px-4 py-3 border border-gray-300 dark:border-dark-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-dark-700 text-dark-900 dark:text-white"
-                      placeholder="What's this about?"
-                    />
+                    >
+                      <option value="" disabled>Select a service</option>
+                      <option value="Website">Website Design & Development</option>
+                      <option value="Branding">Branding & Logo Design</option>
+                      <option value="E-Commerce">E-Commerce Solutions</option>
+                      <option value="SEO">SEO & Digital Marketing</option>
+                      <option value="Content">Content Creation</option>
+                      <option value="Support">Ongoing Support & Maintenance</option>
+                      <option value="Other">Other</option>
+                    </select>
                   </div>
 
                   <div>
@@ -247,7 +231,7 @@ const Contact = () => {
                       required
                       rows={6}
                       className="w-full px-4 py-3 border border-gray-300 dark:border-dark-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-dark-700 text-dark-900 dark:text-white resize-none"
-                      placeholder="Tell me about your project or just say hello..."
+                      placeholder="Tell us about your project or how we can help..."
                     />
                   </div>
 
@@ -264,7 +248,7 @@ const Contact = () => {
                     ) : (
                       <>
                         <Send size={20} />
-                        Send Message
+                        Request Quote
                       </>
                     )}
                   </button>

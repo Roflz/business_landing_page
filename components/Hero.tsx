@@ -24,91 +24,65 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="space-y-8"
         >
-          {/* Greeting */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="text-lg text-primary-600 dark:text-primary-400 font-medium"
-          >
-            Hello, I'm
-          </motion.p>
-
-          {/* Name */}
+          {/* Headline */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
+            transition={{ delay: 0.2 }}
             className="text-5xl md:text-7xl font-bold text-dark-900 dark:text-white"
           >
-            <span className="gradient-text">Your Name</span>
+            <span className="gradient-text">Grow Your Business with Professional Digital Solutions</span>
           </motion.h1>
 
-          {/* Title */}
+          {/* Subheadline */}
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
+            transition={{ delay: 0.4 }}
             className="text-2xl md:text-3xl text-gray-600 dark:text-gray-300 font-medium"
           >
-            Software Developer & Full-Stack Engineer
+            Modern websites, branding, and digital services to help your business stand out and succeed online.
           </motion.h2>
-
-          {/* Description */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8 }}
-            className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed"
-          >
-            I build exceptional digital experiences that combine beautiful design with powerful functionality. 
-            Passionate about creating innovative solutions that make a difference.
-          </motion.p>
 
           {/* CTA Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1 }}
+            transition={{ delay: 0.6 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             <button
-              onClick={() => scrollToSection('projects')}
+              onClick={() => scrollToSection('contact')}
               className="btn-primary flex items-center gap-2 px-8 py-3 text-lg"
             >
-              View My Work
+              Get a Free Quote
             </button>
             <button
-              onClick={() => scrollToSection('contact')}
+              onClick={() => scrollToSection('services')}
               className="btn-secondary flex items-center gap-2 px-8 py-3 text-lg"
             >
-              <Mail size={20} />
-              Get In Touch
-            </button>
-            <button className="btn-secondary flex items-center gap-2 px-8 py-3 text-lg">
-              <Download size={20} />
-              Download CV
+              View Services
             </button>
           </motion.div>
 
-          {/* Stats */}
+          {/* Business Stats / Trust Signals */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.2 }}
+            transition={{ delay: 0.8 }}
             className="flex justify-center items-center gap-8 pt-8"
           >
             <div className="text-center">
-              <div className="text-2xl font-bold text-primary-600 dark:text-primary-400">50+</div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">Projects Completed</div>
+              <div className="text-2xl font-bold text-primary-600 dark:text-primary-400">100+</div>
+              <div className="text-sm text-gray-600 dark:text-gray-400">Projects Delivered</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-primary-600 dark:text-primary-400">5+</div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">Years Experience</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-primary-600 dark:text-primary-400">100%</div>
+              <div className="text-2xl font-bold text-primary-600 dark:text-primary-400">5-Star</div>
               <div className="text-sm text-gray-600 dark:text-gray-400">Client Satisfaction</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl font-bold text-primary-600 dark:text-primary-400">Fast</div>
+              <div className="text-sm text-gray-600 dark:text-gray-400">Turnaround</div>
             </div>
           </motion.div>
         </motion.div>
@@ -118,7 +92,7 @@ const Hero = () => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
+        transition={{ delay: 1.0 }}
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
       >
         <motion.button

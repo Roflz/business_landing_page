@@ -23,18 +23,16 @@ const Footer = () => {
             className="md:col-span-2"
           >
             <h3 className="text-2xl font-bold gradient-text mb-4">
-              Your Name
+              Your Business Name
             </h3>
             <p className="text-gray-400 leading-relaxed mb-6">
-              A passionate software developer dedicated to creating innovative digital solutions 
-              that make a difference. Let's build something amazing together.
+              Professional digital solutions for modern businesses. Let's build your success together.
             </p>
             <div className="flex space-x-4">
               {[
-                { name: 'GitHub', url: 'https://github.com/yourusername' },
-                { name: 'LinkedIn', url: 'https://linkedin.com/in/yourusername' },
-                { name: 'Twitter', url: 'https://twitter.com/yourusername' },
-                { name: 'Dribbble', url: 'https://dribbble.com/yourusername' }
+                { name: 'LinkedIn', url: 'https://linkedin.com/company/yourbusiness' },
+                { name: 'Facebook', url: 'https://facebook.com/yourbusiness' },
+                { name: 'Twitter', url: 'https://twitter.com/yourbusiness' }
               ].map((social) => (
                 <a
                   key={social.name}
@@ -61,10 +59,12 @@ const Footer = () => {
               {[
                 { name: 'Home', href: '#home' },
                 { name: 'About', href: '#about' },
-                { name: 'Skills', href: '#skills' },
-                { name: 'Projects', href: '#projects' },
-                { name: 'Experience', href: '#experience' },
-                { name: 'Contact', href: '#contact' }
+                { name: 'Services', href: '#services' },
+                { name: 'Client Work', href: '#projects' },
+                { name: 'Process', href: '#process' },
+                { name: 'Contact', href: '#contact' },
+                { name: 'Privacy Policy', href: '#' },
+                { name: 'Terms of Service', href: '#' }
               ].map((link) => (
                 <li key={link.name}>
                   <a
@@ -87,9 +87,10 @@ const Footer = () => {
           >
             <h4 className="text-lg font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-gray-400">
-              <li>your.email@example.com</li>
+              <li>business@email.com</li>
               <li>+1 (555) 123-4567</li>
-              <li>San Francisco, CA</li>
+              <li>123 Main St, San Francisco, CA</li>
+              <li>Mon-Fri: 9am – 6pm</li>
             </ul>
           </motion.div>
         </div>
@@ -103,9 +104,9 @@ const Footer = () => {
           className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center"
         >
           <div className="flex items-center gap-2 text-gray-400 mb-4 md:mb-0">
-            <span>© {currentYear} Your Name. Made with</span>
+            <span>© {currentYear} Your Business Name. Made with</span>
             <Heart size={16} className="text-red-500 fill-current" />
-            <span>and lots of coffee.</span>
+            <span>by Your Business Team.</span>
           </div>
           
           <button
