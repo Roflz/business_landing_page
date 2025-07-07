@@ -4,16 +4,31 @@ const PALETTES = [
   {
     id: 'blue-purple',
     label: 'Blue/Purple',
+    colors: [
+      { primary: '#2563eb', secondary: '#a21caf' },
+      { bg: '#f8fafc', bgAlt: '#f3f4f6' },
+      { bgDark: '#1e293b', bgAltDark: '#334155' },
+    ],
     className: 'bg-gradient-to-r from-[#2563eb] to-[#a21caf]'
   },
   {
     id: 'yellow-orange',
     label: 'Yellow/Orange',
+    colors: [
+      { primary: '#facc15', secondary: '#f97316' },
+      { bg: '#fefce8', bgAlt: '#fef9c3' },
+      { bgDark: '#422006', bgAltDark: '#451a03' },
+    ],
     className: 'bg-gradient-to-r from-[#facc15] to-[#f97316]'
   },
   {
     id: 'green',
     label: 'Green',
+    colors: [
+      { primary: '#22c55e', secondary: '#059669' },
+      { bg: '#f0fdf4', bgAlt: '#ecfdf5' },
+      { bgDark: '#14532d', bgAltDark: '#0f172a' },
+    ],
     className: 'bg-gradient-to-r from-[#22c55e] to-[#059669]'
   }
 ]
@@ -54,7 +69,7 @@ export default function ColorPaletteSwitcher() {
         <svg className="w-4 h-4 ml-1 text-gray-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
       </button>
       {open && (
-        <div className="absolute right-0 mt-2 w-44 bg-white dark:bg-dark-800 border border-gray-200 dark:border-dark-700 rounded-lg shadow-lg z-50">
+        <div className="absolute right-0 mt-2 w-64 bg-white dark:bg-dark-800 border border-gray-200 dark:border-dark-700 rounded-lg shadow-lg z-50">
           {PALETTES.map(palette => (
             <button
               key={palette.id}
@@ -62,7 +77,11 @@ export default function ColorPaletteSwitcher() {
               onClick={() => handleSelect(palette.id)}
               type="button"
             >
-              <span className={`w-5 h-5 rounded-full ${palette.className}`} />
+              <span className="flex gap-1">
+                <span className="w-4 h-4 rounded-full border border-gray-300 dark:border-dark-700" style={{ background: `linear-gradient(90deg, ${palette.colors[0].primary} 50%, ${palette.colors[0].secondary} 50%)` }} title="Primary colors"></span>
+                <span className="w-4 h-4 rounded-full border border-gray-300 dark:border-dark-700" style={{ background: `linear-gradient(90deg, ${palette.colors[1].bg} 50%, ${palette.colors[1].bgAlt} 50%)` }} title="Light backgrounds"></span>
+                <span className="w-4 h-4 rounded-full border border-gray-300 dark:border-dark-700" style={{ background: `linear-gradient(90deg, ${palette.colors[2].bgDark} 50%, ${palette.colors[2].bgAltDark} 50%)` }} title="Dark backgrounds"></span>
+              </span>
               <span>{palette.label}</span>
             </button>
           ))}

@@ -16,75 +16,46 @@
 .theme-blue-purple {
   --color-primary-from: #2563eb;
   --color-primary-to: #a21caf;
+  --color-bg-from: #f8fafc;
+  --color-bg-to: #e0e7ef;
+  --color-bg-alt-from: #f3f4f6;
+  --color-bg-alt-to: #d1d5db;
+}
+.dark.theme-blue-purple {
+  --color-bg-from: #1e293b;
+  --color-bg-to: #0f172a;
+  --color-bg-alt-from: #334155;
+  --color-bg-alt-to: #1e293b;
 }
 .theme-yellow-orange {
   --color-primary-from: #facc15;
   --color-primary-to: #f97316;
+  --color-bg-from: #fefce8;
+  --color-bg-to: #fef3c7;
+  --color-bg-alt-from: #fef9c3;
+  --color-bg-alt-to: #fde68a;
+}
+.dark.theme-yellow-orange {
+  --color-bg-from: #422006;
+  --color-bg-to: #78350f;
+  --color-bg-alt-from: #451a03;
+  --color-bg-alt-to: #422006;
 }
 .theme-green {
   --color-primary-from: #22c55e;
   --color-primary-to: #059669;
+  --color-bg-from: #f0fdf4;
+  --color-bg-to: #dcfce7;
+  --color-bg-alt-from: #ecfdf5;
+  --color-bg-alt-to: #d1fae5;
 }
-.bg-theme-light {
-  --color-bg-from: #f8fafc;
-  --color-bg-to: #e0e7ef;
-  --color-bg-alt-from: #f3f4f6;
-  --color-bg-alt-to: #d1d5db;
-}
-.dark.bg-theme-light {
-  --color-bg-from: #1e293b;
-  --color-bg-to: #0f172a;
-  --color-bg-alt-from: #334155;
-  --color-bg-alt-to: #1e293b;
-}
-.bg-theme-dark {
-  --color-bg-from: #1e293b;
-  --color-bg-to: #0f172a;
-  --color-bg-alt-from: #334155;
-  --color-bg-alt-to: #1e293b;
-}
-.dark.bg-theme-dark {
-  --color-bg-from: #f8fafc;
-  --color-bg-to: #e0e7ef;
-  --color-bg-alt-from: #f3f4f6;
-  --color-bg-alt-to: #d1d5db;
-}
-.bg-theme-gray {
-  --color-bg-from: #f3f4f6;
-  --color-bg-to: #d1d5db;
-  --color-bg-alt-from: #e5e7eb;
-  --color-bg-alt-to: #f3f4f6;
-}
-.dark.bg-theme-gray {
-  --color-bg-from: #334155;
-  --color-bg-to: #1e293b;
-  --color-bg-alt-from: #475569;
-  --color-bg-alt-to: #334155;
-}
-.bg-theme-blue {
-  --color-bg-from: #e0f2fe;
-  --color-bg-to: #bae6fd;
-  --color-bg-alt-from: #f0f9ff;
-  --color-bg-alt-to: #e0f2fe;
-}
-.dark.bg-theme-blue {
-  --color-bg-from: #0e2235;
-  --color-bg-to: #19324a;
-  --color-bg-alt-from: #1e293b;
-  --color-bg-alt-to: #0e2235;
-}
-.bg-theme-green {
-  --color-bg-from: #dcfce7;
-  --color-bg-to: #bbf7d0;
-  --color-bg-alt-from: #f0fdf4;
-  --color-bg-alt-to: #dcfce7;
-}
-.dark.bg-theme-green {
+.dark.theme-green {
   --color-bg-from: #14532d;
   --color-bg-to: #166534;
-  --color-bg-alt-from: #1e293b;
+  --color-bg-alt-from: #0f172a;
   --color-bg-alt-to: #14532d;
 }
+
 
 @layer base {
   html {
