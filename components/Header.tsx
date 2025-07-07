@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Menu, X, Sun, Moon } from 'lucide-react'
 import ColorPaletteSwitcher from './ColorPaletteSwitcher'
+import BackgroundPaletteSwitcher from './BackgroundPaletteSwitcher'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -63,8 +64,9 @@ const Header = () => {
             ))}
           </nav>
           {/* Controls (right) */}
-          <div className="w-1/4 flex-shrink-0 flex items-center justify-end space-x-4">
+          <div className="absolute top-2 right-4 flex items-center space-x-4">
             <ColorPaletteSwitcher />
+            <BackgroundPaletteSwitcher />
             <button
               onClick={toggleDarkMode}
               className="p-2 rounded-lg bg-gray-100 dark:bg-dark-800 hover:bg-gray-200 dark:hover:bg-dark-700 transition-colors duration-200"
@@ -83,6 +85,7 @@ const Header = () => {
           </motion.div>
           <div className="flex items-center space-x-4">
             <ColorPaletteSwitcher />
+            <BackgroundPaletteSwitcher />
             <button
               onClick={toggleDarkMode}
               className="p-2 rounded-lg bg-gray-100 dark:bg-dark-800 hover:bg-gray-200 dark:hover:bg-dark-700 transition-colors duration-200"

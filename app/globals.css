@@ -8,6 +8,10 @@
 :root {
   --color-primary-from: #2563eb; /* blue */
   --color-primary-to: #a21caf;   /* purple */
+  --color-bg-from: #f8fafc;      /* default light bg */
+  --color-bg-to: #e0e7ef;        /* default light bg gradient */
+  --color-bg-alt-from: #f3f4f6;  /* default alt bg */
+  --color-bg-alt-to: #d1d5db;    /* default alt bg gradient */
 }
 .theme-blue-purple {
   --color-primary-from: #2563eb;
@@ -20,6 +24,66 @@
 .theme-green {
   --color-primary-from: #22c55e;
   --color-primary-to: #059669;
+}
+.bg-theme-light {
+  --color-bg-from: #f8fafc;
+  --color-bg-to: #e0e7ef;
+  --color-bg-alt-from: #f3f4f6;
+  --color-bg-alt-to: #d1d5db;
+}
+.dark.bg-theme-light {
+  --color-bg-from: #1e293b;
+  --color-bg-to: #0f172a;
+  --color-bg-alt-from: #334155;
+  --color-bg-alt-to: #1e293b;
+}
+.bg-theme-dark {
+  --color-bg-from: #1e293b;
+  --color-bg-to: #0f172a;
+  --color-bg-alt-from: #334155;
+  --color-bg-alt-to: #1e293b;
+}
+.dark.bg-theme-dark {
+  --color-bg-from: #f8fafc;
+  --color-bg-to: #e0e7ef;
+  --color-bg-alt-from: #f3f4f6;
+  --color-bg-alt-to: #d1d5db;
+}
+.bg-theme-gray {
+  --color-bg-from: #f3f4f6;
+  --color-bg-to: #d1d5db;
+  --color-bg-alt-from: #e5e7eb;
+  --color-bg-alt-to: #f3f4f6;
+}
+.dark.bg-theme-gray {
+  --color-bg-from: #334155;
+  --color-bg-to: #1e293b;
+  --color-bg-alt-from: #475569;
+  --color-bg-alt-to: #334155;
+}
+.bg-theme-blue {
+  --color-bg-from: #e0f2fe;
+  --color-bg-to: #bae6fd;
+  --color-bg-alt-from: #f0f9ff;
+  --color-bg-alt-to: #e0f2fe;
+}
+.dark.bg-theme-blue {
+  --color-bg-from: #0e2235;
+  --color-bg-to: #19324a;
+  --color-bg-alt-from: #1e293b;
+  --color-bg-alt-to: #0e2235;
+}
+.bg-theme-green {
+  --color-bg-from: #dcfce7;
+  --color-bg-to: #bbf7d0;
+  --color-bg-alt-from: #f0fdf4;
+  --color-bg-alt-to: #dcfce7;
+}
+.dark.bg-theme-green {
+  --color-bg-from: #14532d;
+  --color-bg-to: #166534;
+  --color-bg-alt-from: #1e293b;
+  --color-bg-alt-to: #14532d;
 }
 
 @layer base {
@@ -72,5 +136,17 @@ body {
   }
   .bg-gradient-primary {
     background-image: linear-gradient(to right, var(--color-primary-from), var(--color-primary-to)) !important;
+  }
+  .bg-background {
+    background-color: var(--color-bg-from) !important;
+  }
+  .bg-background-alt {
+    background-color: var(--color-bg-alt-from) !important;
+  }
+  .bg-gradient-background {
+    background-image: linear-gradient(to bottom, var(--color-bg-from), var(--color-bg-to)) !important;
+  }
+  .bg-gradient-background-alt {
+    background-image: linear-gradient(to bottom, var(--color-bg-alt-from), var(--color-bg-alt-to)) !important;
   }
 } 
