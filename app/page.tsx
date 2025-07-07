@@ -1,5 +1,3 @@
-'use client';
-
 import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
 import FeaturesSection from './components/FeaturesSection';
@@ -12,7 +10,7 @@ import FooterSection from './components/FooterSection';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white text-gray-900">
+    <div className="min-h-screen">
       <HeroSection />
       <AboutSection />
       <FeaturesSection />
