@@ -1,25 +1,23 @@
-import HeroSection from './components/HeroSection';
-import AboutSection from './components/AboutSection';
-import FeaturesSection from './components/FeaturesSection';
-import ServicesSection from './components/ServicesSection';
-import PortfolioSection from './components/PortfolioSection';
-import TestimonialsSection from './components/TestimonialsSection';
-import CTASection from './components/CTASection';
-import ContactSection from './components/ContactSection';
-import FooterSection from './components/FooterSection';
+import Hero from '@/components/Hero'
+import About from '@/components/About'
+import Skills from '@/components/Skills'
+import Projects from '@/components/Projects'
+import Experience from '@/components/Experience'
+import Contact from '@/components/Contact'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
-      <HeroSection />
-      <AboutSection />
-      <FeaturesSection />
-      <ServicesSection />
-      <PortfolioSection />
-      <TestimonialsSection />
-      <CTASection />
-      <ContactSection />
-      <FooterSection />
-    </div>
-  );
-}
+    <main className="min-h-screen">
+      <Header />
+      <Hero />
+      <About />
+      <Skills />
+      <Projects />
+      <Experience />
+      <Contact />
+      <Footer />
+    </main>
+  )
+} 

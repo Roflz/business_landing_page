@@ -1,83 +1,40 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-white dark:bg-dark-900 text-dark-900 dark:text-white;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent border border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+  
+  .card {
+    @apply bg-white dark:bg-dark-800 rounded-xl shadow-lg border border-gray-200 dark:border-dark-700 p-6;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-600 to-purple-600 bg-clip-text text-transparent;
+  }
 }
-
-/* Theme Switcher Classes */
-.theme-blue {
-  --theme-primary: #2563eb;
-  --theme-secondary: #1e40af;
-  --theme-bg: #f0f6ff;
-  --theme-text: #171717;
-}
-.theme-green {
-  --theme-primary: #22c55e;
-  --theme-secondary: #15803d;
-  --theme-bg: #f0fff4;
-  --theme-text: #171717;
-}
-.theme-dark {
-  /* Main accent color (buttons, links, highlights only) */
-  --theme-primary: #2563eb;
-  /* Card/section background */
-  --theme-secondary: #1e293b;
-  /* Main background */
-  --theme-bg: #0f172a;
-  /* Main text color */
-  --theme-text: #ffffff;
-  /* Muted/secondary text color */
-  --theme-muted: #94a3b8;
-  /* Border color */
-  --theme-border: #334155;
-}
-
-body.theme-blue {
-  background: var(--theme-bg);
-  color: var(--theme-text);
-}
-body.theme-green {
-  background: var(--theme-bg);
-  color: var(--theme-text);
-}
-body.theme-dark {
-  background: var(--theme-bg);
-  color: var(--theme-text);
-}
-
-/* Example usage for components (add to Tailwind classes as needed):
-   text-[color:var(--theme-primary)] bg-[color:var(--theme-bg)]
-   border-[color:var(--theme-primary)]
-*/
 
 @layer utilities {
-  .animate-fade-in {
-    animation: fadeIn 1s ease-in;
+  .text-balance {
+    text-wrap: balance;
   }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(24px); }
-  to { opacity: 1; transform: none; }
-}
+} 
