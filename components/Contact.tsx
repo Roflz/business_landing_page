@@ -98,31 +98,22 @@ const Contact = () => {
             </div>
 
             {/* Contact Info Cards */}
-            <div className="space-y-6">
+            <div className="divide-y divide-gray-200 dark:divide-dark-700">
               {contactInfo.map((info, index) => (
-                <motion.a
+                <div
                   key={info.title}
-                  href={info.link}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="card hover:shadow-lg transition-all duration-300 group"
+                  className="flex items-center gap-4 py-4 group"
                 >
-                  <div className="flex items-center gap-4">
-                    <div className="p-3 bg-primary rounded-lg group-hover:bg-primary transition-colors duration-200">
-                      <info.icon size={24} className="text-primary" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-dark-900 dark:text-white">
-                        {info.title}
-                      </h4>
-                      <p className="text-gray-600 dark:text-gray-400">
-                        {info.value}
-                      </p>
-                    </div>
+                  <info.icon size={24} className="text-primary group-hover:text-primary/80 transition-colors duration-200" />
+                  <div>
+                    <h4 className="font-semibold text-dark-900 dark:text-white">
+                      {info.title}
+                    </h4>
+                    <p className="text-gray-600 dark:text-gray-400">
+                      {info.value}
+                    </p>
                   </div>
-                </motion.a>
+                </div>
               ))}
             </div>
 

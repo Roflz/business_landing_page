@@ -8,6 +8,8 @@
 :root {
   --color-primary-from: #2563eb; /* blue */
   --color-primary-to: #a21caf;   /* purple */
+  --color-primary-from-rgb: 37, 99, 235;
+  --color-primary-to-rgb: 162, 28, 175;
   --color-bg-from: #f8fafc;      /* default light bg */
   --color-bg-to: #e0e7ef;        /* default light bg gradient */
   --color-bg-alt-from: #f3f4f6;  /* default alt bg */
@@ -16,6 +18,8 @@
 .theme-blue-purple {
   --color-primary-from: #2563eb;
   --color-primary-to: #a21caf;
+  --color-primary-from-rgb: 37, 99, 235;
+  --color-primary-to-rgb: 162, 28, 175;
   --color-bg-from: #f8fafc;
   --color-bg-to: #e0e7ef;
   --color-bg-alt-from: #f3f4f6;
@@ -30,6 +34,8 @@
 .theme-yellow-orange {
   --color-primary-from: #facc15;
   --color-primary-to: #f97316;
+  --color-primary-from-rgb: 250, 204, 21;
+  --color-primary-to-rgb: 249, 115, 22;
   --color-bg-from: #fefce8;
   --color-bg-to: #fef3c7;
   --color-bg-alt-from: #fef9c3;
@@ -44,6 +50,8 @@
 .theme-green {
   --color-primary-from: #22c55e;
   --color-primary-to: #059669;
+  --color-primary-from-rgb: 34, 197, 94;
+  --color-primary-to-rgb: 5, 150, 105;
   --color-bg-from: #f0fdf4;
   --color-bg-to: #dcfce7;
   --color-bg-alt-from: #ecfdf5;
@@ -58,6 +66,8 @@
 .theme-red-pink {
   --color-primary-from: #ef4444;
   --color-primary-to: #ec4899;
+  --color-primary-from-rgb: 239, 68, 68;
+  --color-primary-to-rgb: 236, 72, 153;
   --color-bg-from: #fef2f2;
   --color-bg-to: #fecaca;
   --color-bg-alt-from: #fdf2f8;
@@ -73,6 +83,8 @@
 .theme-teal-cyan {
   --color-primary-from: #14b8a6;
   --color-primary-to: #06b6d4;
+  --color-primary-from-rgb: 20, 184, 166;
+  --color-primary-to-rgb: 6, 182, 212;
   --color-bg-from: #f0fdfa;
   --color-bg-to: #ccfbf1;
   --color-bg-alt-from: #ecfeff;
@@ -88,6 +100,8 @@
 .theme-rose-orange {
   --color-primary-from: #f43f5e;
   --color-primary-to: #ea580c;
+  --color-primary-from-rgb: 244, 63, 94;
+  --color-primary-to-rgb: 234, 88, 12;
   --color-bg-from: #fff1f2;
   --color-bg-to: #fecdd3;
   --color-bg-alt-from: #fff7ed;
@@ -113,20 +127,21 @@ body {
 
 @layer components {
   .btn-primary {
-    @apply text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+    @apply text-white font-medium py-3 px-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105;
     background-image: linear-gradient(to right, var(--color-primary-from), var(--color-primary-to));
   }
   
   .btn-secondary {
-    @apply bg-transparent border text-primary-600 hover:text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
-    border-color: var(--color-primary-from);
+    @apply bg-transparent border text-primary hover:text-white font-medium py-3 px-6 rounded-full transition-all duration-300 hover:scale-105;
+    border-color: rgba(var(--color-primary-from-rgb, 37, 99, 235), 0.3);
     color: var(--color-primary-from);
   }
   
   .card {
-    @apply rounded-xl shadow-lg p-6;
+    @apply rounded-xl shadow-xl p-6 transition-all duration-300 hover:scale-105 hover:shadow-2xl;
     background-color: var(--color-bg-alt-from) !important;
-    border: 1px solid var(--color-primary-from) !important;
+    border: 1px solid rgba(var(--color-primary-from-rgb, 37, 99, 235), 0.1) !important;
+    backdrop-filter: blur(10px);
   }
   
   .gradient-text {
