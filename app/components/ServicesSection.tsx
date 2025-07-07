@@ -9,7 +9,7 @@ const ServicesSection = () => {
 
   if (layoutStyle === 'modern') {
     return (
-      <section id="services" className="py-20 bg-white dark:bg-dark-900">
+      <section id="services" className="py-20 bg-[color:var(--theme-bg)]" style={{ color: 'var(--theme-text)' }}>
         <div className="max-w-6xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -18,8 +18,8 @@ const ServicesSection = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl font-bold text-dark-900 dark:text-white mb-4">
-              Our <span className="gradient-text">Services</span>
+            <h2 className="text-4xl font-bold mb-4" style={{ color: 'var(--theme-primary)' }}>
+              Our <span>[Services]</span>
             </h2>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -30,13 +30,14 @@ const ServicesSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: idx * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white dark:bg-dark-800 rounded-xl shadow-lg border border-gray-200 dark:border-dark-700 p-8 flex flex-col items-center hover:scale-105 hover:shadow-2xl transition-transform"
+                className="rounded-xl shadow-lg border p-8 flex flex-col items-center hover:scale-105 hover:shadow-2xl transition-transform bg-[color:var(--theme-bg)]"
+                style={{ borderColor: 'var(--theme-primary)', color: 'var(--theme-text)' }}
               >
                 <span className="text-4xl mb-3" style={{ color: 'var(--theme-primary)' }}>
                   {i === 1 ? '💻' : i === 2 ? '📱' : '🔍'}
                 </span>
                 <h3 className="font-semibold text-xl mb-2" style={{ color: 'var(--theme-primary)' }}>[Service {i}]</h3>
-                <p className="text-gray-600 dark:text-gray-400 text-center">[Description of the service offered.]</p>
+                <p className="text-center" style={{ color: 'var(--theme-secondary)' }}>[Description of the service offered.]</p>
               </motion.div>
             ))}
           </div>
@@ -47,24 +48,24 @@ const ServicesSection = () => {
 
   // Classic style fallback
   return (
-    <section id="services" className="py-16 bg-white animate-fade-in">
+    <section id="services" className="py-16 bg-[color:var(--theme-bg)] animate-fade-in" style={{ color: 'var(--theme-text)' }}>
       <div className="max-w-4xl mx-auto px-4">
         <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-center" style={{ color: 'var(--theme-primary)' }}>Our Services</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="p-6 border rounded-2xl shadow-lg hover:scale-105 hover:shadow-2xl transition transform bg-gradient-to-br from-blue-50 to-white flex flex-col items-center">
+          <div className="p-6 border rounded-2xl shadow-lg hover:scale-105 hover:shadow-2xl transition transform bg-[color:var(--theme-bg)] flex flex-col items-center" style={{ borderColor: 'var(--theme-primary)', color: 'var(--theme-text)' }}>
             <span className="text-4xl mb-3" style={{ color: 'var(--theme-primary)' }}>💻</span>
             <h3 className="font-semibold text-lg sm:text-xl mb-2" style={{ color: 'var(--theme-primary)' }}>[Service One]</h3>
-            <p className="text-gray-600 text-center">[Description of the first service offered.]</p>
+            <p className="text-center" style={{ color: 'var(--theme-secondary)' }}>[Description of the first service offered.]</p>
           </div>
-          <div className="p-6 border rounded-2xl shadow-lg hover:scale-105 hover:shadow-2xl transition transform bg-gradient-to-br from-blue-50 to-white flex flex-col items-center">
+          <div className="p-6 border rounded-2xl shadow-lg hover:scale-105 hover:shadow-2xl transition transform bg-[color:var(--theme-bg)] flex flex-col items-center" style={{ borderColor: 'var(--theme-primary)', color: 'var(--theme-text)' }}>
             <span className="text-4xl mb-3" style={{ color: 'var(--theme-primary)' }}>📱</span>
             <h3 className="font-semibold text-lg sm:text-xl mb-2" style={{ color: 'var(--theme-primary)' }}>[Service Two]</h3>
-            <p className="text-gray-600 text-center">[Description of the second service offered.]</p>
+            <p className="text-center" style={{ color: 'var(--theme-secondary)' }}>[Description of the second service offered.]</p>
           </div>
-          <div className="p-6 border rounded-2xl shadow-lg hover:scale-105 hover:shadow-2xl transition transform bg-gradient-to-br from-blue-50 to-white flex flex-col items-center">
+          <div className="p-6 border rounded-2xl shadow-lg hover:scale-105 hover:shadow-2xl transition transform bg-[color:var(--theme-bg)] flex flex-col items-center" style={{ borderColor: 'var(--theme-primary)', color: 'var(--theme-text)' }}>
             <span className="text-4xl mb-3" style={{ color: 'var(--theme-primary)' }}>🔍</span>
             <h3 className="font-semibold text-lg sm:text-xl mb-2" style={{ color: 'var(--theme-primary)' }}>[Service Three]</h3>
-            <p className="text-gray-600 text-center">[Description of the third service offered.]</p>
+            <p className="text-center" style={{ color: 'var(--theme-secondary)' }}>[Description of the third service offered.]</p>
           </div>
         </div>
       </div>

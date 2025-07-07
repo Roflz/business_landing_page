@@ -9,7 +9,7 @@ const FeaturesSection = () => {
 
   if (layoutStyle === 'modern') {
     return (
-      <section id="features" className="py-20 bg-gradient-to-r from-blue-50 to-blue-100 dark:from-dark-800 dark:to-dark-900">
+      <section id="features" className="py-20 bg-[color:var(--theme-bg)]" style={{ color: 'var(--theme-text)' }}>
         <div className="max-w-6xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -18,8 +18,8 @@ const FeaturesSection = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl font-bold text-dark-900 dark:text-white mb-4">
-              Why <span className="gradient-text">Choose Us</span>
+            <h2 className="text-4xl font-bold mb-4" style={{ color: 'var(--theme-primary)' }}>
+              Why <span>[Choose Us]</span>
             </h2>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -30,13 +30,14 @@ const FeaturesSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: idx * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white dark:bg-dark-800 rounded-xl shadow-lg border border-gray-200 dark:border-dark-700 p-8 flex flex-col items-center hover:scale-105 hover:shadow-2xl transition-transform"
+                className="rounded-xl shadow-lg border p-8 flex flex-col items-center hover:scale-105 hover:shadow-2xl transition-transform bg-[color:var(--theme-bg)]"
+                style={{ borderColor: 'var(--theme-primary)', color: 'var(--theme-text)' }}
               >
                 <span className="text-4xl mb-3" style={{ color: 'var(--theme-primary)' }}>
                   {i === 1 ? '🚀' : i === 2 ? '🎨' : '💡'}
                 </span>
                 <h3 className="font-semibold text-xl mb-2" style={{ color: 'var(--theme-primary)' }}>[Feature {i}]</h3>
-                <p className="text-gray-600 dark:text-gray-400 text-center">[Describe the feature or benefit here.]</p>
+                <p className="text-center" style={{ color: 'var(--theme-secondary)' }}>[Describe the feature or benefit here.]</p>
               </motion.div>
             ))}
           </div>
@@ -47,24 +48,24 @@ const FeaturesSection = () => {
 
   // Classic style fallback
   return (
-    <section id="features" className="py-16 bg-gradient-to-r from-blue-50 to-blue-100 animate-fade-in">
+    <section id="features" className="py-16 bg-[color:var(--theme-bg)] animate-fade-in" style={{ color: 'var(--theme-text)' }}>
       <div className="max-w-5xl mx-auto px-4">
         <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-center" style={{ color: 'var(--theme-primary)' }}>Why Choose Us</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow hover:shadow-lg transition">
+          <div className="flex flex-col items-center p-6 bg-[color:var(--theme-bg)] rounded-lg shadow hover:shadow-lg transition" style={{ color: 'var(--theme-text)', border: '1px solid var(--theme-primary)' }}>
             <span className="text-4xl mb-2" style={{ color: 'var(--theme-primary)' }}>🚀</span>
             <h3 className="font-semibold text-lg sm:text-xl mb-2" style={{ color: 'var(--theme-primary)' }}>[Feature One]</h3>
-            <p className="text-gray-600 text-center">[Describe the first feature or benefit here.]</p>
+            <p className="text-center" style={{ color: 'var(--theme-secondary)' }}>[Describe the first feature or benefit here.]</p>
           </div>
-          <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow hover:shadow-lg transition">
+          <div className="flex flex-col items-center p-6 bg-[color:var(--theme-bg)] rounded-lg shadow hover:shadow-lg transition" style={{ color: 'var(--theme-text)', border: '1px solid var(--theme-primary)' }}>
             <span className="text-4xl mb-2" style={{ color: 'var(--theme-primary)' }}>🎨</span>
             <h3 className="font-semibold text-lg sm:text-xl mb-2" style={{ color: 'var(--theme-primary)' }}>[Feature Two]</h3>
-            <p className="text-gray-600 text-center">[Describe the second feature or benefit here.]</p>
+            <p className="text-center" style={{ color: 'var(--theme-secondary)' }}>[Describe the second feature or benefit here.]</p>
           </div>
-          <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow hover:shadow-lg transition">
+          <div className="flex flex-col items-center p-6 bg-[color:var(--theme-bg)] rounded-lg shadow hover:shadow-lg transition" style={{ color: 'var(--theme-text)', border: '1px solid var(--theme-primary)' }}>
             <span className="text-4xl mb-2" style={{ color: 'var(--theme-primary)' }}>💡</span>
             <h3 className="font-semibold text-lg sm:text-xl mb-2" style={{ color: 'var(--theme-primary)' }}>[Feature Three]</h3>
-            <p className="text-gray-600 text-center">[Describe the third feature or benefit here.]</p>
+            <p className="text-center" style={{ color: 'var(--theme-secondary)' }}>[Describe the third feature or benefit here.]</p>
           </div>
         </div>
       </div>

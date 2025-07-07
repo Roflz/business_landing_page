@@ -10,7 +10,7 @@ const FooterSection = () => {
 
   if (layoutStyle === 'modern') {
     return (
-      <footer className="bg-dark-900 dark:bg-black text-white py-12 mt-8">
+      <footer className="py-12 mt-8 bg-[color:var(--theme-secondary)]" style={{ color: 'var(--theme-bg)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -19,7 +19,7 @@ const FooterSection = () => {
             viewport={{ once: true }}
             className="flex flex-col md:flex-row items-center justify-between gap-4 mb-6"
           >
-            <div className="text-2xl font-bold gradient-text">[Your Business Name]</div>
+            <div className="text-2xl font-bold" style={{ color: 'var(--theme-primary)' }}>[Your Business Name]</div>
             <div className="flex gap-6 text-2xl">
               <a href="#" aria-label="Twitter" className="hover:opacity-80 transition" style={{ color: 'var(--theme-primary)' }}>🐦</a>
               <a href="#" aria-label="LinkedIn" className="hover:opacity-80 transition" style={{ color: 'var(--theme-primary)' }}>💼</a>
@@ -34,7 +34,7 @@ const FooterSection = () => {
 
   // Classic style fallback
   return (
-    <footer className="py-8 mt-8 animate-fade-in" style={{ background: 'var(--theme-secondary)', color: 'var(--theme-bg)' }}>
+    <footer className="py-8 mt-8 animate-fade-in bg-[color:var(--theme-secondary)]" style={{ color: 'var(--theme-bg)' }}>
       <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="text-lg font-bold" style={{ color: 'var(--theme-primary)' }}>[Your Business Name]</div>
         <div className="flex gap-6 text-2xl">

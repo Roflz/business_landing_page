@@ -9,7 +9,7 @@ const ContactSection = () => {
 
   if (layoutStyle === 'modern') {
     return (
-      <section id="contact" className="py-20 bg-white dark:bg-dark-900">
+      <section id="contact" className="py-20 bg-[color:var(--theme-bg)]" style={{ color: 'var(--theme-text)' }}>
         <div className="max-w-xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -18,8 +18,8 @@ const ContactSection = () => {
             viewport={{ once: true }}
             className="text-center mb-10"
           >
-            <h2 className="text-4xl font-bold text-dark-900 dark:text-white mb-4">
-              <span className="gradient-text">Contact Us</span>
+            <h2 className="text-4xl font-bold mb-4" style={{ color: 'var(--theme-primary)' }}>
+              <span>[Contact Us]</span>
             </h2>
           </motion.div>
           <motion.form
@@ -27,15 +27,16 @@ const ContactSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="space-y-6 bg-white dark:bg-dark-800 rounded-xl shadow-lg border border-gray-200 dark:border-dark-700 p-8"
+            className="space-y-6 bg-[color:var(--theme-bg)] rounded-xl shadow-lg border p-8"
+            style={{ borderColor: 'var(--theme-primary)', color: 'var(--theme-text)' }}
             onSubmit={e => { e.preventDefault(); alert('Message sent!'); }}
           >
-            <input type="text" placeholder="[Your Name]" className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400" required />
-            <input type="email" placeholder="[Your Email]" className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400" required />
-            <textarea placeholder="[Your Message]" className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400" rows={4} required />
+            <input type="text" placeholder="[Your Name]" className="w-full p-3 border rounded focus:outline-none focus:ring-2" style={{ borderColor: 'var(--theme-primary)', background: 'var(--theme-bg)', color: 'var(--theme-text)' }} required />
+            <input type="email" placeholder="[Your Email]" className="w-full p-3 border rounded focus:outline-none focus:ring-2" style={{ borderColor: 'var(--theme-primary)', background: 'var(--theme-bg)', color: 'var(--theme-text)' }} required />
+            <textarea placeholder="[Your Message]" className="w-full p-3 border rounded focus:outline-none focus:ring-2" style={{ borderColor: 'var(--theme-primary)', background: 'var(--theme-bg)', color: 'var(--theme-text)' }} rows={4} required />
             <button
               type="submit"
-              className="w-full py-3 text-white rounded font-semibold hover:opacity-90 transition"
+              className="w-full py-3 rounded font-semibold hover:opacity-90 transition text-[color:var(--theme-bg)]"
               style={{ background: 'var(--theme-primary)' }}
             >
               Send Message
@@ -48,16 +49,16 @@ const ContactSection = () => {
 
   // Classic style fallback
   return (
-    <section id="contact" className="py-16 bg-white animate-fade-in">
+    <section id="contact" className="py-16 bg-[color:var(--theme-bg)] animate-fade-in" style={{ color: 'var(--theme-text)' }}>
       <div className="max-w-xl mx-auto px-4">
         <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-center" style={{ color: 'var(--theme-primary)' }}>Contact Us</h2>
         <form className="space-y-6" onSubmit={e => { e.preventDefault(); alert('Message sent!'); }}>
-          <input type="text" placeholder="[Your Name]" className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400" required />
-          <input type="email" placeholder="[Your Email]" className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400" required />
-          <textarea placeholder="[Your Message]" className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400" rows={4} required />
+          <input type="text" placeholder="[Your Name]" className="w-full p-3 border rounded focus:outline-none focus:ring-2" style={{ borderColor: 'var(--theme-primary)', background: 'var(--theme-bg)', color: 'var(--theme-text)' }} required />
+          <input type="email" placeholder="[Your Email]" className="w-full p-3 border rounded focus:outline-none focus:ring-2" style={{ borderColor: 'var(--theme-primary)', background: 'var(--theme-bg)', color: 'var(--theme-text)' }} required />
+          <textarea placeholder="[Your Message]" className="w-full p-3 border rounded focus:outline-none focus:ring-2" style={{ borderColor: 'var(--theme-primary)', background: 'var(--theme-bg)', color: 'var(--theme-text)' }} rows={4} required />
           <button
             type="submit"
-            className="w-full py-3 text-white rounded font-semibold hover:opacity-90 transition"
+            className="w-full py-3 rounded font-semibold hover:opacity-90 transition text-[color:var(--theme-bg)]"
             style={{ background: 'var(--theme-primary)' }}
           >
             Send Message
