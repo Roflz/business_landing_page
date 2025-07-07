@@ -11,7 +11,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-dark-900 dark:bg-black text-white py-12">
+    <footer className="bg-background text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8">
           {/* Brand Section */}
@@ -101,7 +101,7 @@ const Footer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           viewport={{ once: true }}
-          className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center"
+          className="border-t border-primary mt-8 pt-8 flex flex-col md:flex-row justify-between items-center"
         >
           <div className="flex items-center gap-2 text-gray-400 mb-4 md:mb-0">
             <span>© {currentYear} Your Business Name. Made with</span>
