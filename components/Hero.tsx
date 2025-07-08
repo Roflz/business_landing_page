@@ -1,7 +1,9 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ChevronDown, Download, Mail } from 'lucide-react'
+import { ChevronDown } from 'lucide-react'
+import { heroContent } from '../site.config'
+import ImageWithEffects from './ImageWithEffects'
 
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
@@ -12,11 +14,12 @@ const Hero = () => {
   }
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative pt-16 bg-gradient-background">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%239C92AC%22%20fill-opacity%3D%220.05%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] -z-10" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section id="home" className="relative w-full overflow-hidden flex items-center justify-center pt-16 min-h-[60vh] md:min-h-[70vh]">
+      {/* Full-width background image with effects */}
+      <div className="absolute inset-0 -z-10">
+        <ImageWithEffects {...heroContent.image} />
+      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center flex flex-col items-center justify-center h-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -28,9 +31,11 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-5xl md:text-7xl font-bold text-dark-900 dark:text-white"
+            className="text-5xl md:text-7xl font-bold text-white drop-shadow-lg"
           >
-            <span className="gradient-text">Grow Your Business with Professional Digital Solutions</span>
+            <span className="gradient-text bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              {heroContent.headline}
+            </span>
           </motion.h1>
 
           {/* Subheadline */}
@@ -38,9 +43,9 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="text-2xl md:text-3xl text-gray-600 dark:text-gray-300 font-medium"
+            className="text-2xl md:text-3xl text-gray-100/90 font-medium drop-shadow"
           >
-            Modern websites, branding, and digital services to help your business stand out and succeed online.
+            {heroContent.subheadline}
           </motion.h2>
 
           {/* CTA Buttons */}
@@ -50,12 +55,12 @@ const Hero = () => {
             transition={{ delay: 0.6 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
-            <button
-              onClick={() => scrollToSection('contact')}
+            <a
+              href={heroContent.ctaLink}
               className="btn-primary flex items-center gap-2 px-8 py-3 text-lg"
             >
-              Get a Free Quote
-            </button>
+              {heroContent.ctaText}
+            </a>
             <button
               onClick={() => scrollToSection('services')}
               className="btn-secondary flex items-center gap-2 px-8 py-3 text-lg"
@@ -73,20 +78,19 @@ const Hero = () => {
           >
             <div className="text-center">
               <div className="text-2xl font-bold text-primary">100+</div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">Projects Delivered</div>
+              <div className="text-sm text-gray-100/80">Projects Delivered</div>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold text-primary">5-Star</div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">Client Satisfaction</div>
+              <div className="text-sm text-gray-100/80">Client Satisfaction</div>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold text-primary">Fast</div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">Turnaround</div>
+              <div className="text-sm text-gray-100/80">Turnaround</div>
             </div>
           </motion.div>
         </motion.div>
       </div>
-
       {/* Scroll Indicator */}
       <motion.div
         initial={{ opacity: 0 }}

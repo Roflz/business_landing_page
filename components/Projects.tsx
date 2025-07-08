@@ -2,71 +2,14 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { projectsContent } from '../site.config'
 import { ExternalLink, Eye } from 'lucide-react'
+
+const iconMap = { Eye }
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('all')
-
-  const caseStudies = [
-    {
-      id: 1,
-      title: 'Website Redesign for Local Bakery',
-      description: 'Transformed an outdated site into a modern, mobile-friendly experience, increasing online orders by 40%.',
-      image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&h=400&fit=crop',
-      category: 'web',
-      results: 'Online orders up 40%'
-    },
-    {
-      id: 2,
-      title: 'E-Commerce Launch for Retailer',
-      description: 'Built a custom online store with secure payments and inventory management.',
-      image: 'https://images.unsplash.com/photo-1515168833906-d2a3b82b3029?w=600&h=400&fit=crop',
-      category: 'web',
-      results: 'Launched in 2 weeks'
-    },
-    {
-      id: 3,
-      title: 'Branding & Logo for Startup',
-      description: 'Developed a unique brand identity and logo, helping the client stand out in a crowded market.',
-      image: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=600&h=400&fit=crop',
-      category: 'branding',
-      results: 'Brand recognition boost'
-    },
-    {
-      id: 4,
-      title: 'SEO Boost for Consultant',
-      description: 'Implemented SEO best practices, resulting in a 3x increase in organic traffic.',
-      image: 'https://images.unsplash.com/photo-1464983953574-0892a716854b?w=600&h=400&fit=crop',
-      category: 'seo',
-      results: '3x organic traffic'
-    },
-    {
-      id: 5,
-      title: 'Content Strategy for Agency',
-      description: 'Created a content plan and blog series that increased engagement and leads.',
-      image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=400&fit=crop',
-      category: 'content',
-      results: 'Leads up 25%'
-    },
-    {
-      id: 6,
-      title: 'Ongoing Support for SaaS',
-      description: 'Provided reliable updates, troubleshooting, and technical support for a growing SaaS business.',
-      image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop',
-      category: 'support',
-      results: '99.9% uptime'
-    }
-  ]
-
-  const filters = [
-    { id: 'all', label: 'All Work' },
-    { id: 'web', label: 'Websites' },
-    { id: 'branding', label: 'Branding' },
-    { id: 'seo', label: 'SEO' },
-    { id: 'content', label: 'Content' },
-    { id: 'support', label: 'Support' }
-  ]
-
+  const { title, subtitle, filters, caseStudies, cta } = projectsContent
   const filteredStudies = activeFilter === 'all'
     ? caseStudies
     : caseStudies.filter(study => study.category === activeFilter)
@@ -82,10 +25,10 @@ const Projects = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold text-dark-900 dark:text-white mb-4">
-            Recent <span className="gradient-text">Client Work</span>
+            {title && <span className="gradient-text">{title}</span>}
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Real results for real businesses—see how we help clients succeed.
+            {subtitle}
           </p>
         </motion.div>
 
@@ -166,10 +109,11 @@ const Projects = () => {
           viewport={{ once: true }}
           className="text-center mt-12"
         >
-          <button className="btn-primary flex items-center gap-2 mx-auto">
-            <Eye size={20} />
-            Start Your Project
-          </button>
+          <a href={cta.link} className="btn-primary flex items-center gap-2 mx-auto">
+            {typeof iconMap[cta.icon as keyof typeof iconMap] === 'function' &&
+              iconMap[cta.icon as keyof typeof iconMap]!({ size: 20 })}
+            {cta.text}
+          </a>
         </motion.div>
       </div>
     </section>

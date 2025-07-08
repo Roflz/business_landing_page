@@ -2,7 +2,10 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { contactContent } from '../site.config'
 import { Mail, Phone, MapPin, Clock, Send, CheckCircle } from 'lucide-react'
+
+const iconMap = { Mail, Phone, MapPin, Clock }
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -14,34 +17,9 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
 
-  const contactInfo = [
-    {
-      icon: Mail,
-      title: 'Email',
-      value: 'business@email.com',
-      link: 'mailto:business@email.com'
-    },
-    {
-      icon: Phone,
-      title: 'Phone',
-      value: '+1 (555) 123-4567',
-      link: 'tel:+15551234567'
-    },
-    {
-      icon: MapPin,
-      title: 'Location',
-      value: '123 Main St, San Francisco, CA',
-      link: 'https://goo.gl/maps/example'
-    },
-    {
-      icon: Clock,
-      title: 'Business Hours',
-      value: 'Mon-Fri: 9am – 6pm',
-      link: '#'
-    }
-  ]
+  const { title, subtitle, infoTitle, infoText, contactInfo, map, form } = contactContent
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleInputChange = (e) => {
     const { name, value } = e.target
     setFormData(prev => ({
       ...prev,
@@ -49,7 +27,7 @@ const Contact = () => {
     }))
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     setIsSubmitting(true)
     await new Promise(resolve => setTimeout(resolve, 2000))
@@ -72,10 +50,10 @@ const Contact = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold text-dark-900 dark:text-white mb-4">
-            Request a <span className="gradient-text">Free Quote</span>
+            {title && <span className="gradient-text">{title}</span>}
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Ready to start your project or have questions? Fill out the form and we'll get back to you promptly.
+            {subtitle}
           </p>
         </motion.div>
 
@@ -90,38 +68,41 @@ const Contact = () => {
           >
             <div>
               <h3 className="text-2xl font-semibold text-dark-900 dark:text-white mb-6">
-                Let's Work Together
+                {infoTitle}
               </h3>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
-                We're here to help your business grow. Reach out for a free consultation or quote—no obligation!
+                {infoText}
               </p>
             </div>
 
             {/* Contact Info Cards */}
             <div className="divide-y divide-gray-200 dark:divide-dark-700">
-              {contactInfo.map((info, index) => (
-                <div
-                  key={info.title}
-                  className="flex items-center gap-4 py-4 group"
-                >
-                  <info.icon size={24} className="text-primary group-hover:text-primary/80 transition-colors duration-200" />
-                  <div>
-                    <h4 className="font-semibold text-dark-900 dark:text-white">
-                      {info.title}
-                    </h4>
-                    <p className="text-gray-600 dark:text-gray-400">
-                      {info.value}
-                    </p>
+              {contactInfo.map((info, index) => {
+                const Icon = iconMap[info.icon as keyof typeof iconMap] || Mail
+                return (
+                  <div
+                    key={info.title}
+                    className="flex items-center gap-4 py-4 group"
+                  >
+                    <Icon size={24} className="text-primary group-hover:text-primary/80 transition-colors duration-200" />
+                    <div>
+                      <h4 className="font-semibold text-dark-900 dark:text-white">
+                        {info.title}
+                      </h4>
+                      <p className="text-gray-600 dark:text-gray-400">
+                        {info.value}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                )
+              })}
             </div>
 
             {/* Map Placeholder */}
             <div className="card mt-8">
-              <h4 className="text-lg font-semibold text-dark-900 dark:text-white mb-2">Our Location</h4>
+              <h4 className="text-lg font-semibold text-dark-900 dark:text-white mb-2">{map.label}</h4>
               <div className="w-full h-48 bg-gray-200 dark:bg-dark-700 rounded-lg flex items-center justify-center text-gray-400 dark:text-gray-500">
-                [Google Map Placeholder]
+                {map.placeholder}
               </div>
             </div>
           </motion.div>
@@ -135,7 +116,7 @@ const Contact = () => {
           >
             <div className="card">
               <h3 className="text-2xl font-semibold text-dark-900 dark:text-white mb-6">
-                Get a Free Quote
+                {form.submitText}
               </h3>
 
               {isSubmitted ? (
@@ -146,10 +127,10 @@ const Contact = () => {
                 >
                   <CheckCircle size={64} className="text-green-500 mx-auto mb-4" />
                   <h4 className="text-xl font-semibold text-dark-900 dark:text-white mb-2">
-                    Request Sent!
+                    {form.successTitle}
                   </h4>
                   <p className="text-gray-600 dark:text-gray-400">
-                    Thank you for your interest. We'll get back to you soon!
+                    {form.successText}
                   </p>
                 </motion.div>
               ) : (
@@ -157,7 +138,7 @@ const Contact = () => {
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-dark-900 dark:text-white mb-2">
-                        Name
+                        {form.nameLabel}
                       </label>
                       <input
                         type="text"
@@ -172,7 +153,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium text-dark-900 dark:text-white mb-2">
-                        Email
+                        {form.emailLabel}
                       </label>
                       <input
                         type="email"
@@ -189,7 +170,7 @@ const Contact = () => {
 
                   <div>
                     <label htmlFor="service" className="block text-sm font-medium text-dark-900 dark:text-white mb-2">
-                      Service Needed
+                      {form.serviceLabel}
                     </label>
                     <select
                       id="service"
@@ -199,20 +180,19 @@ const Contact = () => {
                       required
                       className="w-full px-4 py-3 border border-gray-300 dark:border-dark-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-dark-700 text-dark-900 dark:text-white"
                     >
-                      <option value="" disabled>Select a service</option>
-                      <option value="Website">Website Design & Development</option>
-                      <option value="Branding">Branding & Logo Design</option>
-                      <option value="E-Commerce">E-Commerce Solutions</option>
-                      <option value="SEO">SEO & Digital Marketing</option>
-                      <option value="Content">Content Creation</option>
-                      <option value="Support">Ongoing Support & Maintenance</option>
-                      <option value="Other">Other</option>
+                      <option value="">Select a service</option>
+                      <option value="web">Website Design & Development</option>
+                      <option value="branding">Branding & Logo Design</option>
+                      <option value="ecommerce">E-Commerce Solutions</option>
+                      <option value="seo">SEO & Digital Marketing</option>
+                      <option value="content">Content Creation</option>
+                      <option value="support">Ongoing Support & Maintenance</option>
                     </select>
                   </div>
 
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-dark-900 dark:text-white mb-2">
-                      Message
+                      {form.messageLabel}
                     </label>
                     <textarea
                       id="message"
@@ -220,28 +200,19 @@ const Contact = () => {
                       value={formData.message}
                       onChange={handleInputChange}
                       required
-                      rows={6}
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-dark-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-dark-700 text-dark-900 dark:text-white resize-none"
-                      placeholder="Tell us about your project or how we can help..."
+                      rows={5}
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-dark-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-dark-700 text-dark-900 dark:text-white"
+                      placeholder="How can we help you?"
                     />
                   </div>
 
                   <button
                     type="submit"
+                    className="btn-primary flex items-center gap-2"
                     disabled={isSubmitting}
-                    className="btn-primary flex items-center gap-2 w-full justify-center py-3 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {isSubmitting ? (
-                      <>
-                        <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                        Sending...
-                      </>
-                    ) : (
-                      <>
-                        <Send size={20} />
-                        Request Quote
-                      </>
-                    )}
+                    <Send size={20} />
+                    {form.submitText}
                   </button>
                 </form>
               )}

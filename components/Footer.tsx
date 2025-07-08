@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Heart, ArrowUp } from 'lucide-react'
+import { footerContent } from '../site.config'
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -9,6 +10,7 @@ const Footer = () => {
   }
 
   const currentYear = new Date().getFullYear()
+  const { businessName, tagline, social, quickLinks, contact, copyright } = footerContent
 
   return (
     <footer className="bg-background text-gray-900 dark:text-white py-12">
@@ -23,17 +25,13 @@ const Footer = () => {
             className="md:col-span-2"
           >
             <h3 className="text-2xl font-bold gradient-text mb-4">
-              Your Business Name
+              {businessName}
             </h3>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-              Professional digital solutions for modern businesses. Let's build your success together.
+              {tagline}
             </p>
             <div className="flex space-x-4">
-              {[
-                { name: 'LinkedIn', url: 'https://linkedin.com/company/yourbusiness' },
-                { name: 'Facebook', url: 'https://facebook.com/yourbusiness' },
-                { name: 'Twitter', url: 'https://twitter.com/yourbusiness' }
-              ].map((social) => (
+              {social.map((social) => (
                 <a
                   key={social.name}
                   href={social.url}
@@ -56,16 +54,7 @@ const Footer = () => {
           >
             <h4 className="text-lg font-semibold mb-4 text-primary">Quick Links</h4>
             <ul className="space-y-2">
-              {[
-                { name: 'Home', href: '#home' },
-                { name: 'About', href: '#about' },
-                { name: 'Services', href: '#services' },
-                { name: 'Client Work', href: '#projects' },
-                { name: 'Process', href: '#process' },
-                { name: 'Contact', href: '#contact' },
-                { name: 'Privacy Policy', href: '#' },
-                { name: 'Terms of Service', href: '#' }
-              ].map((link) => (
+              {quickLinks.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
@@ -87,10 +76,7 @@ const Footer = () => {
           >
             <h4 className="text-lg font-semibold mb-4 text-primary">Contact</h4>
             <ul className="space-y-2 text-gray-600 dark:text-gray-400">
-              <li>business@email.com</li>
-              <li>+1 (555) 123-4567</li>
-              <li>123 Main St, San Francisco, CA</li>
-              <li>Mon-Fri: 9am – 6pm</li>
+              {contact.map((item, i) => <li key={i}>{item}</li>)}
             </ul>
           </motion.div>
         </div>
@@ -104,9 +90,8 @@ const Footer = () => {
           className="border-t border-primary/20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center"
         >
           <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400 mb-4 md:mb-0">
-            <span>© {currentYear} Your Business Name. Made with</span>
+            <span>© {currentYear} {copyright}</span>
             <Heart size={16} className="text-red-500 fill-current" />
-            <span>by Your Business Team.</span>
           </div>
           
           <button

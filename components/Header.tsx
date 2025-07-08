@@ -4,10 +4,12 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Menu, X, Sun, Moon } from 'lucide-react'
 import { ColorPaletteSwitcher } from 'theme-lib'
+import { headerContent } from '../site.config'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isDark, setIsDark] = useState(false)
+  const { businessName, navItems } = headerContent
 
   useEffect(() => {
     const isDarkMode = localStorage.getItem('darkMode') === 'true'
@@ -24,15 +26,6 @@ const Header = () => {
     document.documentElement.classList.toggle('dark')
   }
 
-  const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Client Work', href: '#projects' },
-    { name: 'Process', href: '#process' },
-    { name: 'Contact', href: '#contact' },
-  ]
-
   return (
     <motion.header
       initial={{ y: -100 }}
@@ -47,7 +40,7 @@ const Header = () => {
             className="text-2xl font-bold gradient-text absolute left-4 inset-y-0 flex items-center"
             style={{ minWidth: 0 }}
           >
-            Your Business Name
+            {businessName}
           </motion.div>
           {/* Nav (center) */}
           <nav className="mx-auto flex space-x-8">
@@ -78,7 +71,7 @@ const Header = () => {
             whileHover={{ scale: 1.05 }}
             className="text-2xl font-bold gradient-text"
           >
-            Your Business Name
+            {businessName}
           </motion.div>
           <div className="flex items-center space-x-4">
             <ColorPaletteSwitcher />

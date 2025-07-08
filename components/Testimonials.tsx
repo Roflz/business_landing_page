@@ -1,30 +1,11 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { testimonialsContent } from '../site.config'
 import { Quote } from 'lucide-react'
 
-const testimonials = [
-  {
-    name: 'Sarah Johnson',
-    role: 'Owner',
-    company: 'Sweet Treats Bakery',
-    quote: 'The new website brought in so many new customers! The process was smooth and the results exceeded my expectations.'
-  },
-  {
-    name: 'David Lee',
-    role: 'Founder',
-    company: 'RetailPro',
-    quote: 'Our online store was up and running in no time. Professional, reliable, and always available for support.'
-  },
-  {
-    name: 'Emily Chen',
-    role: 'Marketing Director',
-    company: 'BrightStart Agency',
-    quote: 'The branding and content strategy helped us stand out and attract more leads. Highly recommended!'
-  }
-]
-
 const Testimonials = () => {
+  const { title, subtitle, testimonials } = testimonialsContent
   return (
     <section id="testimonials" className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -36,10 +17,10 @@ const Testimonials = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold text-dark-900 dark:text-white mb-4">
-            What <span className="gradient-text">Clients Say</span>
+            {title && <span className="gradient-text">{title}</span>}
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Real feedback from real businesses—see how we deliver results and build lasting partnerships.
+            {subtitle}
           </p>
         </motion.div>
 
@@ -54,7 +35,9 @@ const Testimonials = () => {
               className="card flex flex-col items-center text-center"
             >
               <Quote size={32} className="mb-4 text-primary" />
-              <p className="text-gray-700 dark:text-gray-300 italic mb-4">“{testimonial.quote}”</p>
+              <p className="text-gray-700 dark:text-gray-300 italic mb-4">
+                “{testimonial.quote}”
+              </p>
               <div className="font-semibold text-dark-900 dark:text-white">{testimonial.name}</div>
               <div className="text-sm text-gray-500 dark:text-gray-400">{testimonial.role}, {testimonial.company}</div>
             </motion.div>
