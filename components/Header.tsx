@@ -40,18 +40,17 @@ const Header = () => {
       className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-primary/20"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="hidden md:flex items-center h-16 w-full">
-          {/* Logo (left) */}
-          <div className="w-1/4 flex-shrink-0 flex items-center">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="text-2xl font-bold gradient-text"
-            >
-              Your Business Name
-            </motion.div>
-          </div>
+        <div className="hidden md:flex items-center h-16 w-full relative">
+          {/* Logo (absolute left, vertically centered) */}
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="text-2xl font-bold gradient-text absolute left-4 inset-y-0 flex items-center"
+            style={{ minWidth: 0 }}
+          >
+            Your Business Name
+          </motion.div>
           {/* Nav (center) */}
-          <nav className="flex-1 flex justify-center space-x-8">
+          <nav className="mx-auto flex space-x-8">
             {navItems.map((item) => (
               <a
                 key={item.name}
@@ -62,8 +61,8 @@ const Header = () => {
               </a>
             ))}
           </nav>
-          {/* Controls (right) */}
-          <div className="absolute top-2 right-4 flex items-center space-x-4">
+          {/* Controls (absolute right, vertically centered) */}
+          <div className="absolute right-4 inset-y-0 flex items-center space-x-4">
             <ColorPaletteSwitcher />
             <button
               onClick={toggleDarkMode}
