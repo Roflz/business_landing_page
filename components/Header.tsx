@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Menu, X, Sun, Moon } from 'lucide-react'
-import ColorPaletteSwitcher from './ColorPaletteSwitcher'
+import { ColorPaletteSwitcher } from 'theme-lib'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)

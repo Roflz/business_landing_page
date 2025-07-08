@@ -1,7 +1,7 @@
 {
-  "name": "portfolio-website",
+  "name": "business-landing-page",
   "version": "1.0.0",
-  "description": "Professional software development portfolio website",
+  "description": "Professional business landing page with dynamic theming",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -23,7 +23,8 @@
     "framer-motion": "^10.16.0",
     "lucide-react": "^0.292.0",
     "clsx": "^2.0.0",
-    "tailwind-merge": "^2.0.0"
+    "tailwind-merge": "^2.0.0",
+    "theme-lib": "file:../theme-lib"
   },
   "devDependencies": {
     "eslint": "^8.0.0",
