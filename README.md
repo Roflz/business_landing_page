@@ -1,136 +1,100 @@
-# Professional Portfolio Website
+# Business Landing Page Template
 
-A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS. This project showcases software development skills, projects, and professional experience with beautiful animations and a clean design.
+A modern, responsive business landing page template built with Next.js, TypeScript, and Tailwind CSS. This template is perfect for freelancers and agencies offering landing page services to clients. It features a professional design, dynamic color themes, dark/light mode, and all the essential sections for a high-converting business site.
 
 ## ✨ Features
 
-- **Modern Design**: Clean, professional design with smooth animations
-- **Responsive**: Fully responsive across all devices
-- **Dark Mode**: Toggle between light and dark themes
-- **Performance**: Optimized for fast loading and smooth interactions
-- **SEO Ready**: Built with Next.js for excellent SEO performance
-- **TypeScript**: Full TypeScript support for better development experience
-- **Animations**: Smooth scroll animations using Framer Motion
-- **Contact Form**: Functional contact form with validation
-- **Project Showcase**: Filterable project gallery with detailed information
+- **Modern, Professional Design**: Clean layout, beautiful gradients, and subtle animations
+- **Fully Responsive**: Looks great on all devices
+- **Theme System**: Multiple color palettes with gradient accents, each with light/dark backgrounds
+- **Dark/Light Mode**: Toggle for user preference
+- **Customizable Sections**: Hero, About, Services, Projects/Client Work, Process, Testimonials, Contact, Footer
+- **Contact Form**: With validation and ready for integration
+- **Accessible & SEO-Friendly**: Built with best practices
+- **Easy to Brand**: Update colors, logo, and content in minutes
 
 ## 🚀 Tech Stack
 
-- **Framework**: Next.js 14 with App Router
+- **Framework**: Next.js 14 (App Router)
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
 - **Animations**: Framer Motion
 - **Icons**: Lucide React
 - **Fonts**: Inter (Google Fonts)
 
-## 📦 Installation
+## 📦 Getting Started
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/portfolio-website.git
-   cd portfolio-website
+   git clone https://github.com/yourusername/business-landing-page.git
+   cd business-landing-page
    ```
-
 2. **Install dependencies**
    ```bash
    npm install
    # or
    yarn install
    ```
-
 3. **Run the development server**
    ```bash
    npm run dev
    # or
    yarn dev
    ```
-
 4. **Open your browser**
-   Navigate to [http://localhost:3000](http://localhost:3000)
+   Go to [http://localhost:3000](http://localhost:3000)
 
 ## 🛠️ Customization
 
-### Personal Information
-Update the following files with your personal information:
+### Branding & Content
+- **Logo/Business Name**: Update in `components/Header.tsx` and `components/Footer.tsx`
+- **Colors & Theme**: Use the theme switcher in the header, or edit palettes in `components/ColorPaletteSwitcher.tsx` and CSS variables in `app/globals.css`
+- **Section Content**: Edit text and images in the components under `components/`
+- **Contact Info**: Update in `components/Contact.tsx` and `components/Footer.tsx`
 
-1. **`app/layout.tsx`** - Update metadata (title, description, etc.)
-2. **`components/Hero.tsx`** - Update name, title, and description
-3. **`components/About.tsx`** - Update personal information and bio
-4. **`components/Skills.tsx`** - Update skills and proficiency levels
-5. **`components/Projects.tsx`** - Add your projects with images and links
-6. **`components/Experience.tsx`** - Update work experience and education
-7. **`components/Contact.tsx`** - Update contact information and social links
+### Sections
+- **Hero**: Business value prop, CTA, stats
+- **About**: Business story, mission, highlights
+- **Services**: List of services offered
+- **Projects/Client Work**: Case studies or portfolio
+- **Process**: Timeline or how you work
+- **Testimonials**: Client reviews
+- **Contact**: Inquiry/quote form
+- **Footer**: Business info, links, contact
 
-### Styling
-- **Colors**: Update the color scheme in `tailwind.config.js`
-- **Fonts**: Change fonts in `tailwind.config.js` and `app/globals.css`
-- **Animations**: Modify animations in `tailwind.config.js`
+### Theming
+- **Color Palettes**: Easily switch between popular color themes (blue/purple, yellow/orange, green, red/pink, teal/cyan, rose/orange)
+- **Dark/Light Mode**: Toggle in the header; backgrounds and accents adapt automatically
+- **Custom Gradients**: Update palette gradients in `ColorPaletteSwitcher.tsx` and CSS variables
 
-### Images
-- Replace placeholder images with your own project screenshots
-- Update profile image in the About section
-- Ensure all images are optimized for web
+### Images & Icons
+- Replace placeholder images and icons with your own business assets
+- Use Lucide React or your preferred icon set
 
 ## 📁 Project Structure
 
 ```
-portfolio-website/
+business_landing_page/
 ├── app/
 │   ├── globals.css          # Global styles and Tailwind imports
 │   ├── layout.tsx           # Root layout component
-│   └── page.tsx             # Home page component
+│   └── page.tsx             # Main landing page
 ├── components/
-│   ├── Header.tsx           # Navigation header
+│   ├── Header.tsx           # Navigation and theme switcher
 │   ├── Hero.tsx             # Hero section
-│   ├── About.tsx            # About section
-│   ├── Skills.tsx           # Skills section
-│   ├── Projects.tsx         # Projects showcase
-│   ├── Experience.tsx       # Work experience and education
-│   ├── Contact.tsx          # Contact form and information
-│   └── Footer.tsx           # Footer component
+│   ├── About.tsx            # About/business story
+│   ├── Services.tsx         # Services offered
+│   ├── Projects.tsx         # Client work/case studies
+│   ├── Process.tsx          # How you work
+│   ├── Testimonials.tsx     # Client reviews
+│   ├── Contact.tsx          # Contact form and info
+│   └── Footer.tsx           # Footer
 ├── public/                  # Static assets
 ├── tailwind.config.js       # Tailwind CSS configuration
-├── next.config.js           # Next.js configuration
+├── next.config.ts           # Next.js configuration
 ├── tsconfig.json            # TypeScript configuration
 └── package.json             # Dependencies and scripts
 ```
-
-## 🎨 Sections
-
-### Hero Section
-- Animated introduction with your name and title
-- Call-to-action buttons
-- Professional statistics
-- Smooth scroll indicator
-
-### About Section
-- Personal information card
-- Professional bio
-- Skills overview
-- Download CV button
-
-### Skills Section
-- Categorized skills with progress bars
-- Additional technologies grid
-- Animated skill levels
-
-### Projects Section
-- Filterable project gallery
-- Project images with hover effects
-- Technology tags
-- Live demo and code links
-
-### Experience Section
-- Timeline of work experience
-- Educational background
-- Professional certifications
-- Key achievements
-
-### Contact Section
-- Functional contact form
-- Contact information cards
-- Social media links
-- Form validation and submission
 
 ## 🚀 Deployment
 
@@ -141,23 +105,15 @@ portfolio-website/
 
 ### Netlify
 1. Build the project: `npm run build`
-2. Deploy the `out` folder to Netlify
+2. Deploy the `.next` or `out` folder to Netlify
 
 ### Other Platforms
-The project can be deployed to any platform that supports Next.js static exports.
+The project can be deployed to any platform that supports Next.js.
 
 ## 📝 License
 
 This project is open source and available under the [MIT License](LICENSE).
 
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 📞 Support
-
-If you have any questions or need help customizing the portfolio, feel free to open an issue or contact me.
-
 ---
 
-**Made with ❤️ and lots of coffee** 
+**Made with ❤️ for modern businesses and freelancers** 
